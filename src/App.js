@@ -1,5 +1,8 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+
+import ArtworksList from './components/ArtworksList'
+
+import './App.css'
 
 class App extends Component {
   render() {
@@ -9,9 +12,10 @@ class App extends Component {
           <h1 className="App-title">M+ Collection Spelunker</h1>
           <h3>A work in progress</h3>
         </header>
+        <ArtworksList />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
