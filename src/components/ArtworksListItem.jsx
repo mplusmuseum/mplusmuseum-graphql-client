@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-// import { graphql } from 'react-apollo'
-// import gql from 'graphql-tag'
+import { Link } from 'react-router-dom'
 
 class ArtworksListItem extends Component {
   render() {
     return (
-      <li>{this.props.title}</li>
+      <li><Link to={`/collection/objects/${this.props.id}`}>{this.props.title}</Link></li>
     )
   }
 }

@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
 
 import ArtworksListItem from './ArtworksListItem'
 
-const artworksQuery = gql`query { artworks { id, title } }`
+import artworkQueries from '../queries/artworkQueries'
 
 class ArtworksList extends Component {
   render() {
@@ -15,7 +14,7 @@ class ArtworksList extends Component {
         <ul>
           {
             this.props.data.artworks.map((artwork) => {
-              return <ArtworksListItem key={artwork.id} title={artwork.title} />
+              return <ArtworksListItem key={artwork.id} id={artwork.id} title={artwork.title[0].text} />
             })
           }
         </ul>
@@ -24,4 +23,4 @@ class ArtworksList extends Component {
   }
 }
 
-export default graphql(artworksQuery)(ArtworksList)
+export default graphql(artworkQueries.allArtworks)(ArtworksList)
